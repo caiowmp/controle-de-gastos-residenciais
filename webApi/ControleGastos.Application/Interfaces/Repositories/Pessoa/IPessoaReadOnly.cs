@@ -2,6 +2,6 @@
 {
   internal interface IPessoaReadOnly
   {
-    Task<List<Pessoa>> GetAll(Pessoa pesosa);
+    Task<List<Domain.Entities.Pessoa>> GetAll(Domain.Entities.Pessoa pesosa);
   }
 }

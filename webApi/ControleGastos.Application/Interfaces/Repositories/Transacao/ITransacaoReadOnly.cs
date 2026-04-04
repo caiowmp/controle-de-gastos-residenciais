@@ -2,6 +2,6 @@
 {
   internal interface ITransacaoReadOnly
   {
-    Task<List<Transacao>> GetAll(Transacao transacao);
+    Task<List<Domain.Entities.Transacao>> GetAll(Domain.Entities.Transacao transacao);
   }
 }

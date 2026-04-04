@@ -2,7 +2,7 @@
 {
   internal interface ITransacaoWriteOnly
   {
-    Task Add(Transacao transacao);
+    Task Add(Domain.Entities.Transacao transacao);
 
     /// <summary>
     /// Essa função retorna TRUE se a DELETE foi feito com sucesso do contrário retorna FALSE

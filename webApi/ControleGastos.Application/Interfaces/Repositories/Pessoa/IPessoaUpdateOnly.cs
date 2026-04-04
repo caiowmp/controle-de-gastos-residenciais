@@ -2,6 +2,6 @@
 {
   internal interface IPessoaUpdateOnly
   {
-    void Update(Pessoa pessoa);
+    void Update(Domain.Entities.Pessoa pessoa);
   }
 }

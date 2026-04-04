@@ -2,6 +2,6 @@
 {
   internal interface ICategoriaReadOnly
   {
-    Task<List<Categoria>> GetAll(Categoria categoria);
+    Task<List<Domain.Entities.Categoria>> GetAll(Domain.Entities.Categoria categoria);
   }
 }

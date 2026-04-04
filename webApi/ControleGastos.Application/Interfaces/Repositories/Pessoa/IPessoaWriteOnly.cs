@@ -2,7 +2,7 @@
 {
   internal interface IPessoaWriteOnly
   {
-    Task Add(Pessoa pessoa);
+    Task Add(Domain.Entities.Pessoa pessoa);
 
     /// <summary>
     /// Essa função retorna TRUE se a DELETE foi feito com sucesso do contrário retorna FALSE
