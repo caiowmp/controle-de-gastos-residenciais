@@ -9,6 +9,6 @@
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    Task Delete(long id);
+    Task Delete(Guid id);
   }
 }

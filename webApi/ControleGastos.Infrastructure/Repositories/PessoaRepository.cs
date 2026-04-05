@@ -12,7 +12,7 @@ namespace ControleGastos.Infrastructure.Repositories
       await _dbContext.Pessoas.AddAsync(pessoa);
     }
 
-    public async Task Delete(long id)
+    public async Task Delete(Guid id)
     {
       var result = await _dbContext.Pessoas.FindAsync(id);
 
