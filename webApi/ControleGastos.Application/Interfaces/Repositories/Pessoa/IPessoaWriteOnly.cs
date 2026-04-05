@@ -1,6 +1,6 @@
 ﻿namespace ControleGastos.Application.Interfaces.Repositories.Pessoa
 {
-  internal interface IPessoaWriteOnly
+  public interface IPessoaWriteOnly
   {
     Task Add(Domain.Entities.Pessoa pessoa);
 

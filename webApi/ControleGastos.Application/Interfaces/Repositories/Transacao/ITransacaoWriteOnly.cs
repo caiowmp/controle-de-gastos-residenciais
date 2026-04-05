@@ -1,6 +1,6 @@
 ﻿namespace ControleGastos.Application.Interfaces.Repositories.Transacao
 {
-  internal interface ITransacaoWriteOnly
+  public interface ITransacaoWriteOnly
   {
     Task Add(Domain.Entities.Transacao transacao);
 
