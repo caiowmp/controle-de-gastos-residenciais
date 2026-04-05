@@ -2,6 +2,6 @@
 {
   public interface ICategoriaReadOnly
   {
-    Task<List<Domain.Entities.Categoria>> GetAll(Domain.Entities.Categoria categoria);
+    Task<List<Domain.Entities.Categoria>> GetAll();
   }
 }
