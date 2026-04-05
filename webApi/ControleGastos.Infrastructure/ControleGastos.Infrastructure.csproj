@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ControleGastos.Application\ControleGastos.Application.csproj" />
+    <ProjectReference Include="..\ControleGastos.Domain\ControleGastos.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
