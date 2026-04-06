@@ -23,24 +23,16 @@ builder.Services.AddCors(options =>
   }
 });
 
-// Swagger
+// Swagger/OpenAPI (usando Swashbuckle.AspNetCore - fonte confiável)
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(options =>
-{
-  options.SwaggerDoc("v1", new()
-  {
-    Title = "Controle de Gastos API",
-    Version = "v1",
-    Description = "API para gerenciamento de despesas residenciais"
-  });
-});
+builder.Services.AddSwaggerGen();
 
 // Dependecy Injection
 builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 
-// Swagger
+// Swagger - Apenas em desenvolvimento
 if (app.Environment.IsDevelopment())
 {
   app.UseSwagger();
