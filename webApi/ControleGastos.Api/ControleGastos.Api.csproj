@@ -17,10 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ControleGastos.Application\ControleGastos.Application.csproj" />
     <ProjectReference Include="..\ControleGastos.Infrastructure\ControleGastos.Infrastructure.csproj" />
   </ItemGroup>
