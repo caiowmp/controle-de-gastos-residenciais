@@ -58,3 +58,5 @@ nunit-*.xml
 
 # Sqlite
 *.db
+*.db-shm
+*.db-wal
