@@ -1,120 +1,96 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+﻿import { useState } from "react"
+import "./App.css"
+import Pessoas from "./pages/Pessoas"
+import Categorias from "./pages/Categorias"
+import Transacoes from "./pages/Transacoes"
+import TotaisPorPessoa from "./pages/TotaisPorPessoa"
+import TotaisPorCategoria from "./pages/TotaisPorCategoria"
+
+/**
+ * Componente principal da aplicacao de Controle de Gastos Residenciais
+ * 
+ * Responsabilidades:
+ * - Gerenciar a navegacao entre paginas
+ * - Renderizar a pagina ativa de acordo com a selecao do usuario
+ * - Fornecer acesso a todas as funcionalidades do sistema
+ */
+type Page = "pessoas" | "categorias" | "transacoes" | "totaisPessoa" | "totaisCategoria"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentPage, setCurrentPage] = useState<Page>("pessoas")
+
+  // Renderiza a pagina de acordo com a selecao
+  const renderPage = () => {
+    switch (currentPage) {
+      case "pessoas":
+        return <Pessoas />
+      case "categorias":
+        return <Categorias />
+      case "transacoes":
+        return <Transacoes />
+      case "totaisPessoa":
+        return <TotaisPorPessoa />
+      case "totaisCategoria":
+        return <TotaisPorCategoria />
+      default:
+        return <Pessoas />
+    }
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="app-container">
+      <nav className="navbar">
+        <div className="nav-brand">
+          <h1>Sistema de Controle de Gastos</h1>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+        <ul className="nav-menu">
+          <li>
+            <button
+              className={`nav-button ${currentPage === "pessoas" ? "active" : ""}`}
+              onClick={() => setCurrentPage("pessoas")}
+            >
+              Pessoas
+            </button>
+          </li>
+          <li>
+            <button
+              className={`nav-button ${currentPage === "categorias" ? "active" : ""}`}
+              onClick={() => setCurrentPage("categorias")}
+            >
+              Categorias
+            </button>
+          </li>
+          <li>
+            <button
+              className={`nav-button ${currentPage === "transacoes" ? "active" : ""}`}
+              onClick={() => setCurrentPage("transacoes")}
+            >
+              Transacoes
+            </button>
+          </li>
+          <li>
+            <button
+              className={`nav-button ${currentPage === "totaisPessoa" ? "active" : ""}`}
+              onClick={() => setCurrentPage("totaisPessoa")}
+            >
+              Totais por Pessoa
+            </button>
+          </li>
+          <li>
+            <button
+              className={`nav-button ${currentPage === "totaisCategoria" ? "active" : ""}`}
+              onClick={() => setCurrentPage("totaisCategoria")}
+            >
+              Totais por Categoria
+            </button>
+          </li>
+        </ul>
+      </nav>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      <main className="page-content">
+        {renderPage()}
+      </main>
+    </div>
   )
 }
 
