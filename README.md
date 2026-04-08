@@ -65,7 +65,7 @@ dotnet run
 
 ## 4. Acessar o Swagger
 
-https://localhost:<porta>/swagger
+https://localhost:5000/swagger
 
 ---
 
