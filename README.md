@@ -1,10 +1,10 @@
-# 📌 Controle de Gastos Residenciais - Backend
+# Backend
 
 Este projeto é uma **Web API desenvolvida em C# com .NET**, responsável por gerenciar o controle de gastos residenciais, permitindo cadastro de pessoas, categorias e transações financeiras, além de fornecer relatórios consolidados.
 
 ---
 
-# 🚀 Tecnologias utilizadas
+## Tecnologias utilizadas
 
 - .NET (ASP.NET Core Web API)
 - C#
@@ -15,21 +15,25 @@ Este projeto é uma **Web API desenvolvida em C# com .NET**, responsável por ge
 
 ---
 
-# 🏗 Arquitetura do Projeto
+## Arquitetura do Projeto
 
 O projeto segue uma arquitetura em camadas, com separação clara de responsabilidades:
 
 ControleGastos
 
 ├── API (Controllers)
+
 ├── Application (Services / Regras de negócio)
+
 ├── Domain (Entidades e enums)
+
 ├── Infrastructure (Persistência / EF Core)
+
 ├── Tests (Testes unitários)
 
 ---
 
-# ⚙️ Requisitos para rodar o projeto
+## Requisitos para rodar o projeto
 
 Antes de iniciar, certifique-se de ter instalado:
 
@@ -39,16 +43,16 @@ Antes de iniciar, certifique-se de ter instalado:
 
 ---
 
-# 🔧 Configuração do ambiente
+## Configuração do ambiente
 
-## 1. Clonar o repositório
+### 1. Clonar o repositório
 
 ```bash
 git clone https://github.com/caiowmp/controle-de-gastos-residenciais
 cd controle-de-gastos-residenciais/webapi
 ```
 
-## 2. Aplicar migrations
+### 2. Aplicar migrations
 
 ```bash
 dotnet restore
@@ -56,38 +60,38 @@ dotnet build
 dotnet ef database update --project ControleGastos.Infrastructure --startup-project ControleGastos.Api
 ```
 
-## 3. Executar o projeto
+### 3. Executar o projeto
 
 ```bash
 dotnet run
 ```
 ---
 
-## 4. Acessar o Swagger
+### 4. Acessar o Swagger
 
 https://localhost:5000/swagger
 
 ---
 
-# 📌 Funcionalidades implementadas
+## Funcionalidades implementadas
 
-## 👤 Pessoas
+### Pessoas
 - Criar pessoa
 - Listar pessoas
 - Editar pessoa
 - Deletar pessoa
 
-## 🏷 Categorias
+### Categorias
 - Criar categoria
 - Listar categorias
 
-## 💰 Transações
+### Transações
 - Criar transação
 - Listar transações
 
 ---
 
-# ⚠️ Regras de negócio importantes
+## Regras de negócio importantes
 
 - Menores de idade não podem ter receitas
 - Categorias devem ser compatíveis com o tipo da transação
@@ -96,9 +100,9 @@ https://localhost:5000/swagger
 
 ---
 
-# 📊 Relatórios
+## Relatórios
 
-## Totais por pessoa
+### Totais por pessoa
 - Total de receitas
 - Total de despesas
 - Saldo
@@ -106,7 +110,7 @@ https://localhost:5000/swagger
 
 ---
 
-# 🧪 Testes
+## Testes
 
 Para executar os testes:
 
@@ -116,21 +120,17 @@ dotnet test
 
 ---
 
-# 📌 Boas práticas adotadas
+## Boas práticas adotadas
 
 - Separação por camadas
 - Uso de DTOs
 - Injeção de dependência
 - Regras de negócio centralizadas nos services
 
----
-
-# 👨‍💻 Autor
-
-Projeto desenvolvido para avaliação técnica.
 
 
-# Controle de Gastos Residenciais - Frontend
+
+# Frontend
 
 Frontend desenvolvido em **React + TypeScript + Vite** para o Sistema de Controle de Gastos Residenciais.
 
